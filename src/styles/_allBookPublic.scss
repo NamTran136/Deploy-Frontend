@@ -1,0 +1,284 @@
+.allBook-container {
+  display: grid;
+  grid-auto-flow: row dense;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 64rem;
+  margin: auto;
+  > .allBook-content {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    margin-right: 1rem /* 16px */;
+    border: 0.125rem solid rgb(209, 213, 219);
+    position: relative;
+    > .list-book {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem /* 16px */;
+      padding: 0.5rem 1rem;
+      margin-bottom: 50px;
+      > .book-item {
+        text-align: center;
+        width: 100%;
+        --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        cursor: pointer;
+        border-radius: 0.75rem/* 12px */;
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
+        padding-left: 0.3rem;
+        padding-right: 0.3rem;
+        background-color: rgb(247, 247, 247);
+        &:hover {
+            --tw-translate-y: -0.25rem/* -4px */;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+            --tw-shadow-color: #bdbdbd;
+            --tw-shadow: var(--tw-shadow-colored);
+        }
+        img {
+          width: 100%;
+          height: 12rem;
+          margin: auto;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    > .book-wrapper {
+      width: 100%;
+      > .book-image-wrapper {
+        display: grid;
+        grid-auto-flow: row dense;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        padding-top: 1.5rem /* 24px */;
+        padding-bottom: 1.5rem /* 24px */;
+        padding-right: 1rem /* 16px */;
+        padding-left: 1rem /* 16px */;
+        > .book-image {
+          position: relative;
+          padding-left: 1rem /* 16px */;
+          padding-right: 1rem /* 16px */;
+          > img {
+            width: 11.25rem;
+            margin: auto;
+            height: auto;
+          }
+          > .book-image-subitem {
+            position: absolute;
+            top: 1.25rem /* 20px */;
+            padding-top: 0.5rem /* 8px */;
+            padding-bottom: 0.5rem /* 8px */;
+            left: 0px;
+            right: 0px;
+            margin-left: 1rem /* 16px */;
+            text-align: center;
+            background-color: rgba(96, 165, 250, 0.5);
+            font-weight: 700;
+            font-size: 1.25rem /* 20px */;
+            line-height: 1.75rem /* 28px */;
+            color: rgb(249, 115, 22);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+              "Liberation Mono", "Courier New", monospace;
+          }
+        }
+        > .book-detail {
+          grid-column: span 2 / span 2;
+          padding: 1rem;
+          text-align: justify;
+          > .book-title {
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.875rem /* 30px */;
+            line-height: 2.25rem /* 36px */;
+            color: rgb(37, 99, 235);
+          }
+          > .mt-2 > .book-title-link {
+            color: rgb(59, 130, 246);
+            &:hover {
+              color: rgb(29, 103, 223);
+              text-decoration: underline;
+            }
+          }
+          > .book-message {
+            margin: auto;
+            padding: 0.75rem /* 12px */;
+            background-color: rgb(254, 226, 226);
+          }
+          > .book-btn-wrapper {
+            @include flex(row, space-around, center, 0);
+            > button {
+              width: 120px;
+              height: 36px;
+              outline: 2px solid transparent;
+              outline-offset: 2px;
+              font-weight: 600;
+              border-radius: 0.5rem /* 8px */;
+              font-size: 0.875rem /* 14px */;
+              line-height: 1.25rem /* 20px */;
+              padding: 0;
+              margin-inline-end: 0.5rem /* 8px */;
+              margin-bottom: 0.5rem /* 8px */;
+            }
+          }
+          >.social-media-share {
+            @include flex(row, center, center, 0);
+            >.like-icon{
+              margin: 0 1.5rem;
+              cursor: pointer;
+            }
+            >.social-media-wrapper{
+              @include flex(row, space-around, center, 0);
+              >div {
+                margin: 0 1.5rem;
+              }
+            }
+          }
+        }
+      }
+      > .separate {
+        margin-left: 1rem /* 16px */;
+        margin-right: 1rem /* 16px */;
+        border: 0.1rem solid rgb(209, 213, 219);
+      }
+      > .book-description-wrapper {
+        padding: 1rem /* 16px */;
+        > .book-description-title {
+          font-weight: 600;
+          margin-bottom: 1rem /* 16px */;
+          font-size: 1.25rem /* 20px */;
+          line-height: 1.75rem /* 28px */;
+        }
+        > p {
+          text-align: justify;
+        }
+      }
+    }
+    > .list-watched-book {
+      width: 100%;
+      padding: 1rem 2rem;
+      >.watched-book-item {
+        @include flex(row, flex-start, center, 0);
+        margin: 1rem 0;
+        padding: 0.2rem;
+        --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        cursor: pointer;
+        border-radius: 0.75rem/* 12px */;
+        &:hover {
+            --tw-translate-y: -0.25rem/* -4px */;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+            --tw-shadow-color: #bdbdbd;
+            --tw-shadow: var(--tw-shadow-colored);
+        }
+        
+        > img {
+          width: 20%;
+          height: 10rem;
+        }
+        > .watched-book-content {
+          flex: 1;
+          height: 10rem;
+          @include flex(column, space-around, center, 0);
+          > h2 {
+            color: rgb(37, 99, 235);
+          }
+        }
+      }
+    }
+  }
+  > .sub-item-container {
+    margin-top: 0;
+    margin-left: 1rem;
+  }
+  > .menu-container {
+    margin-left: 1rem;
+  }
+  > .comment {
+    grid-column: span 3 / span 3;
+    margin-top: 1.5rem /* 24px */;
+
+    > div {
+      > .comment-list {
+        > .comment-list-item {
+          padding: 1rem;
+          > .user-comment {
+            display: flex;
+            justify-content: flex-start;
+            align-items: stretch;
+            > .user-comment-img {
+              width: 10rem;
+              > img {
+                @include square(2rem);
+              }
+            }
+            > .content-wrapper {
+              flex: 1;
+              text-align: justify;
+              > .time-comment {
+                color: rgb(137, 138, 141);
+              }
+            }
+          }
+        }
+      }
+      > form > .comment-form {
+        width: 100%;
+        margin-bottom: 1rem /* 16px */;
+        border: 0.125rem solid rgb(229, 231, 235);
+        border-radius: 0.5rem /* 8px */;
+        background-color: rgb(249, 250, 251);
+        > .comment-form-input {
+          padding: 0.5rem 1rem;
+          background-color: rgb(255, 255, 255);
+          border-top-left-radius: 0.5rem /* 8px */;
+          border-top-right-radius: 0.5rem /* 8px */;
+          position: relative;
+          > label {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+          }
+          > textarea {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 0.875rem /* 14px */;
+            line-height: 1.25rem /* 20px */;
+            color: rgb(17, 24, 39);
+            background-color: rgb(255, 255, 255);
+            border-width: 0px;
+            box-shadow: 5px 10px 18px rgb(136, 136, 136);
+          }
+        }
+        > .btn-submit {
+          @include flex(row, center, center, 0);
+          padding: 0.5rem 0.75rem;
+          border-top-width: 1px;
+          width: 100%;
+          text-align: center;
+          > button {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.625rem 1rem;
+            font-size: 0.75rem /* 12px */;
+            line-height: 1rem /* 16px */;
+            font-weight: 500;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            background-color: rgb(29, 78, 216);
+            border-radius: 0.5rem /* 8px */;
+            cursor: pointer;
+            &:hover {
+              background-color: rgb(30, 64, 175);
+            }
+          }
+        }
+      }
+    }
+  }
+}
