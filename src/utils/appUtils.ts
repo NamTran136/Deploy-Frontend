@@ -23,6 +23,7 @@ export function GetUser(token: string | null) {
 
 export const returnPaginationRange = (totalPage: number,page: number, limit: number, siblings: number) => {
   let totalPageNoInArray = 7 + siblings;
+  console.log(limit);
   if(totalPageNoInArray >= totalPage) {
     return _.range(1, totalPage + 1);
   }

@@ -130,6 +130,7 @@ function CreateBlog() {
               }}
               onInit={(evt, editor) => {
                 setText(editor.getContent({ format: "text" }));
+                console.log(evt);
               }}
               init={{
                 plugins:
